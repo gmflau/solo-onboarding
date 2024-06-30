@@ -6,12 +6,12 @@ metadata:
   name: flux-system
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 30s
   ref:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/solo-io/GitOps-with-Flux-and-Istio
+  url: ssh://git@github.com/gmflau/solo-onboarding
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
