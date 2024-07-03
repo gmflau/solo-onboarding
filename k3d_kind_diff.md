@@ -5,6 +5,7 @@
 **k3d:**    
 ```
 ❯ kubectl get svc -n gloo-system
+NAME               TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S) 
 rate-limit         ClusterIP      10.43.157.52    <none>        18081/TCP                                              7h20m
 gloo-fed-console   ClusterIP      10.43.54.13     <none>        10101/TCP,8090/TCP,8081/TCP                            7h20m
 extauth            ClusterIP      10.43.223.162   <none>        8083/TCP                                               7h20m
@@ -28,5 +29,8 @@ rate-limit         ClusterIP      10.1.7.75      <none>         18081/TCP       
 redis              ClusterIP      10.1.199.160   <none>         6379/TCP                                               6h55m
 ```
     
+The built-in load balancer service from k3d hands the same EXTERNAL-IP address for k8 LoadBalancer services.
+    
+
 
 

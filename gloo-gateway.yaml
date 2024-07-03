@@ -1,0 +1,31 @@
+global:
+  extensions:
+    caching:
+      enabled: true
+gloo:
+  discovery:
+    enabled: true
+  gloo:
+    disableLeaderElection: true
+  gloo-fed:
+    enabled: false
+  kubeGateway:
+    enabled: true
+  gloo:
+    gloo:
+      deployment:
+        customEnv:
+          # The Gloo Portal plugin is disabled by default
+          # You can use the plugin with Gloo Mesh Gateway and the Kubernetes Gateway API (not classic Gloo Mesh Gateway)
+          - name: GG_EXPERIMENTAL_PORTAL_PLUGIN
+            value: "true"
+# Enable the subchart for the portal server
+gateway-portal-web-server:
+  enabled: true
+grafana:
+  defaultInstallationEnabled: false
+license_key: eyJhZGRPbnMiOltdLCJleHAiOjI1NjExMzQ1MzMsImlhdCI6MTY5NzEzMDkzMywiayI6IjQ4biszUSIsImx0IjoidHJpYWwiLCJwcm9kdWN0IjoiZ2xvby10cmlhbCJ9.EnNbEl7yNNPZjaZY5m8Pa_kz1HwEeFaqdjsxhLT8Uqk
+observability:
+  enabled: false
+prometheus:
+  enabled: false
