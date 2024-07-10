@@ -1,0 +1,8 @@
+apiVersion: gateway.solo.io/v1
+kind: RouteOption
+metadata:
+  name: gml-rewrite
+  namespace: gloo-system
+spec:
+  options:
+    prefixRewrite: '/index.html'

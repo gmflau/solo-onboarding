@@ -1,0 +1,25 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: httpbin-rewrite
+  namespace: gloo-system
+spec:
+  parentRefs:
+  - name: http
+    namespace: gloo-system
+  hostnames:
+    - rewrite.example
+  rules:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /
+      filters:
+        - type: ExtensionRef
+          extensionRef:
+            group: gateway.solo.io
+            kind: RouteOption
+            name: gml-rewrite
+      backendRefs:
+        - name: maintenance-page
+          port: 80
